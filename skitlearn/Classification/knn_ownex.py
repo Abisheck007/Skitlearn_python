@@ -13,10 +13,7 @@ for i in range(len(x[0])):
     x[:,i] = le.fit_transform(x[:,i])
 # print(x)
 
-y  = df[['class']].replace({
-    'Yes':1,
-    'No':0
-})
+y  = df['class'].replace({'Yes':1,'No':0})
 # print(y)
 #model creation
 knn = neighbors.KNeighborsClassifier(n_neighbors=3,weights="uniform")
@@ -26,3 +23,8 @@ prediction = knn.predict(x_test)
 accuracy = metrics.accuracy_score(y_test,prediction)
 print("accuracy:", accuracy)
 print("prediction:", prediction)
+
+##we can also find the actual value and the predicted value
+
+print("Actual value" , y[2])
+print("Predicted value" , knn.predict(x)[2])
