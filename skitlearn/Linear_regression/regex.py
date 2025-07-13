@@ -18,3 +18,4 @@ print("prediction",prediction)
 print("performance",performance)
 print("intercept",model.intercept_)
 print("coef",model.coef_)
+print
